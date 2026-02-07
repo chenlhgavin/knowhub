@@ -1,0 +1,22 @@
+/* Design Tokens extracted from https://example.com */
+/* Generated: 2026-01-26T12:01:00.176Z */
+
+:root {
+
+  /* Extracted Colors */
+  --extracted-bg-1: rgb(238, 238, 238);
+  --extracted-text-1: rgb(0, 0, 0);
+  --extracted-text-2: rgb(51, 68, 136);
+
+  /* Extracted Typography */
+  --font-primary: "Times New Roman";
+  --font-secondary: system-ui, sans-serif;
+
+  /* Extracted Spacing */
+  --spacing-1: 16px;
+  --spacing-2: 16px;
+  --spacing-3: 180px;
+  --spacing-4: 320px;
+
+  /* Extracted Effects */
+}
