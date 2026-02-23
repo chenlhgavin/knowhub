@@ -2,7 +2,7 @@
 
 基于 Astro 5.x 构建的现代化知识库网站，汇集 Rust、多模态 Agent、Python 等技术领域的学习笔记、文章与演示文稿。
 
-线上地址：https://lehuagavin.github.io/knowhub
+线上地址：https://chenlhgavin.github.io/knowhub
 
 ## 技术栈
 
