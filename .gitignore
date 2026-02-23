@@ -50,3 +50,6 @@ target/
 *.tmp
 *.temp
 .cache/
+
+# CODA worktrees
+.trees/

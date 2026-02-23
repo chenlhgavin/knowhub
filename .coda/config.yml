@@ -1,0 +1,28 @@
+# CODA Project Configuration
+version: 1
+
+agent:
+  model: "claude-opus-4-6"
+  permission_mode: "auto"
+  max_retries: 3
+
+git:
+  auto_commit: true
+  squash_before_push: true
+  branch_prefix: "feature"
+  commit_prefix: "feat"
+
+review:
+  enabled: true
+  engine: codex
+  codex_model: "gpt-5.3-codex"
+  codex_reasoning_effort: "high"
+  checks:
+    # Astro / TypeScript site
+    - "cd site && npm run build"
+    # Rust workspace
+    - "cd rustascent && cargo build --workspace"
+    - "cd rustascent && cargo +nightly fmt -- --check"
+    - "cd rustascent && cargo clippy --workspace -- -D warnings"
+    - "cd rustascent && cargo test --workspace"
+  max_review_rounds: 5
