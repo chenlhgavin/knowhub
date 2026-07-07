@@ -1,0 +1,9 @@
+[submodule "vendors/claude-agent-sdk-python"]
+	path = vendors/claude-agent-sdk-python
+	url = https://github.com/anthropics/claude-agent-sdk-python.git
+[submodule "vendors/longcut"]
+	path = vendors/longcut
+	url = git@github.com:SamuelZ12/longcut.git
+[submodule "vendors/codex"]
+	path = vendors/codex
+	url = https://github.com/openai/codex.git

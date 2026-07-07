@@ -1,0 +1,174 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/sections/HeroSection.astro';
+import FeatureGrid from '../components/content/FeatureGrid.astro';
+import { topics } from '../data/topics';
+import { url } from '../utils/path';
+
+const features = [
+  {
+    icon: '🦀',
+    title: 'Rust',
+    description: '深入Rust语言核心概念，包括所有权系统、生命周期、并发编程、async/await等',
+  },
+  {
+    icon: '🤖',
+    title: '多模态Agent',
+    description: '探索多模态AI Agent的架构设计、工具调用、视觉推理、编排框架等前沿技术',
+  },
+  {
+    icon: '🐍',
+    title: 'Python',
+    description: 'Python高级特性、异步编程、数据科学工具链、Web框架与最佳实践',
+  },
+  {
+    icon: '📝',
+    title: '持续更新',
+    description: '知识库持续更新，不断扩展新的技术主题和深度文章',
+  },
+  {
+    icon: '🔍',
+    title: '深度剖析',
+    description: '每篇文章注重原理分析与实践结合，不止于表面使用',
+  },
+  {
+    icon: '🌐',
+    title: '开放分享',
+    description: '技术知识汇总与分享，构建可复用的学习资源体系',
+  },
+];
+---
+
+<BaseLayout
+  title="关于"
+  description="关于知识库 - 汇聚技术领域的学习笔记与深度文章"
+>
+  <HeroSection
+    title="关于知识库"
+    subtitle="记录学习历程，沉淀技术知识，分享实践经验。"
+    gradient={true}
+  />
+
+  <!-- 知识库理念 -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">知识库涵盖领域</h2>
+      <p class="section-description">
+        聚焦于实用技术领域的学习笔记与深度文章
+      </p>
+      <FeatureGrid features={features} columns={3} />
+    </div>
+  </section>
+
+  <!-- 当前主题 -->
+  <section class="section topics-section">
+    <div class="container">
+      <h2 class="section-title">当前主题</h2>
+      <div class="topics-list">
+        {topics.map((topic) => (
+          <a href={url(`/topics/${topic.slug}`)} class="topic-item">
+            <span class="topic-icon">{topic.icon}</span>
+            <div class="topic-info">
+              <h3 class="topic-name">{topic.name}</h3>
+              <p class="topic-desc">{topic.description}</p>
+            </div>
+            <span class="topic-count">
+              {topic.articles.length > 0 ? `${topic.articles.length} 篇` : '筹备中'}
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .section {
+    padding: var(--space-20) 0;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: var(--space-4);
+    color: var(--text-primary);
+  }
+
+  .section-description {
+    text-align: center;
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto var(--space-16);
+    line-height: 1.6;
+  }
+
+  .topics-section {
+    background: var(--surface);
+  }
+
+  .topics-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .topic-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-6);
+    background: var(--background);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    transition: all var(--duration-normal) var(--ease-out);
+    border-bottom: none !important;
+  }
+
+  .topic-item:hover {
+    transform: translateX(4px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .topic-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+  }
+
+  .topic-info {
+    flex: 1;
+  }
+
+  .topic-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-1);
+  }
+
+  .topic-desc {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .topic-count {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--primary);
+    white-space: nowrap;
+  }
+
+  :global([data-theme="motherduck"]) .topic-item {
+    border: 2px solid var(--text-primary);
+    border-radius: 0;
+  }
+
+  :global([data-theme="motherduck"]) .topic-item:hover {
+    transform: translate(4px, -4px);
+    box-shadow: rgb(56, 56, 56) -6px 6px 0px 0px;
+  }
+</style>

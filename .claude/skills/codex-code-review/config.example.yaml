@@ -1,0 +1,129 @@
+# Codex Code Review Configuration
+# Copy this file to .codex-review.yaml in your project root to customize settings
+
+# Review focus areas and their weights (0.0 to 1.0)
+focus:
+  code_quality: 1.0
+  security: 1.0
+  performance: 0.8
+  architecture: 0.8
+  best_practices: 1.0
+
+# Language-specific settings
+languages:
+  javascript:
+    style_guide: "airbnb"  # or "google", "standard"
+    check_types: true
+  typescript:
+    strict_mode: true
+  python:
+    style_guide: "pep8"
+    docstring_format: "google"  # or "numpy", "sphinx"
+  go:
+    check_formatting: true
+  rust:
+    check_unsafe: true
+
+# Security settings
+security:
+  # Enable/disable specific checks
+  checks:
+    sql_injection: true
+    xss: true
+    auth_bypass: true
+    sensitive_data: true
+    hardcoded_secrets: true
+    weak_crypto: true
+    command_injection: true
+    path_traversal: true
+
+  # Patterns to flag as potential secrets
+  secret_patterns:
+    - "password\\s*=\\s*['\"][^'\"]+['\"]"
+    - "api[_-]?key\\s*=\\s*['\"][^'\"]+['\"]"
+    - "secret\\s*=\\s*['\"][^'\"]+['\"]"
+    - "token\\s*=\\s*['\"][^'\"]+['\"]"
+
+  # Files/paths to exclude from security scanning
+  exclude:
+    - "*.test.*"
+    - "*.spec.*"
+    - "**/test/**"
+    - "**/tests/**"
+    - "**/fixtures/**"
+    - "**/mock/**"
+
+# Performance settings
+performance:
+  # Complexity thresholds
+  max_function_complexity: 15
+  max_function_lines: 50
+  max_file_lines: 500
+
+  # Performance anti-patterns to check
+  check_patterns:
+    - n_plus_one_queries
+    - large_loops
+    - blocking_io
+    - memory_leaks
+    - unnecessary_iterations
+
+# Architecture settings
+architecture:
+  # SOLID principles to check
+  solid:
+    single_responsibility: true
+    open_closed: true
+    liskov_substitution: true
+    interface_segregation: true
+    dependency_inversion: true
+
+  # Maximum coupling thresholds
+  max_imports_per_file: 20
+  max_dependencies: 50
+
+# Output settings
+output:
+  format: "markdown"  # or "json"
+  include_line_numbers: true
+  include_code_snippets: true
+  max_issues_per_category: 10
+
+# Web search verification
+verification:
+  enabled: true
+  verify_dependencies: true
+  verify_cves: true
+  check_best_practices: true
+  cache_ttl_hours: 1
+
+# Files to include/exclude
+files:
+  include:
+    - "**/*.js"
+    - "**/*.ts"
+    - "**/*.jsx"
+    - "**/*.tsx"
+    - "**/*.py"
+    - "**/*.go"
+    - "**/*.java"
+    - "**/*.rs"
+    - "**/*.rb"
+    - "**/*.php"
+    - "**/*.c"
+    - "**/*.cpp"
+    - "**/*.h"
+    - "**/*.cs"
+    - "**/*.swift"
+    - "**/*.kt"
+
+  exclude:
+    - "**/node_modules/**"
+    - "**/vendor/**"
+    - "**/dist/**"
+    - "**/build/**"
+    - "**/.git/**"
+    - "**/coverage/**"
+    - "**/__pycache__/**"
+    - "**/*.min.js"
+    - "**/*.min.css"

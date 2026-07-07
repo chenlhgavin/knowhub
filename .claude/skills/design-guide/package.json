@@ -1,0 +1,20 @@
+{
+  "name": "design-guide",
+  "version": "1.0.0",
+  "description": "Extract design systems from websites and generate pixel-perfect replicas",
+  "main": "scripts/workflow.js",
+  "scripts": {
+    "extract": "node scripts/extract_design.js",
+    "guide": "node scripts/generate_guide.js",
+    "compare": "node scripts/compare_screenshots.js",
+    "workflow": "node scripts/workflow.js"
+  },
+  "keywords": ["design", "css", "extraction", "playwright", "design-system"],
+  "author": "",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "playwright": "^1.58.0",
+    "pngjs": "^7.0.0"
+  }
+}
