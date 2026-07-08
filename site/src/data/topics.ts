@@ -39,6 +39,15 @@ export const topics: Topic[] = [
         readingTime: '18 分钟',
         image: '/images/articles/bert-family.png',
       },
+      {
+        slug: 'sentence-transformers',
+        title: '把一句话装进一个向量：一文读懂 sentence-transformers',
+        summary: '从 BERT 原生句向量的失效与 cross-encoder 的 O(N²) 推理账单出发，拆解 SBERT 的双塔结构、mean pooling 与批内负采样对比学习，再到 retrieve & re-rank 两级架构——讲清今天几乎所有语义检索与 RAG 系统的地基。',
+        tags: ['深度学习', 'SBERT', '句向量', '对比学习', 'RAG', '语义检索'],
+        date: '2026-07-08',
+        readingTime: '14 分钟',
+        image: '/images/articles/sentence-transformers.png',
+      },
     ],
   },
   {
