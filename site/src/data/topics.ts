@@ -31,6 +31,15 @@ export const topics: Topic[] = [
     heroImage: '/images/topics/deep-learning-hero.png',
     articles: [
       {
+        slug: 'rnn',
+        title: '当神经网络学会记忆：一文读懂 RNN',
+        summary: '从"猜下一个词"的语言模型出发，用迷你语料走通 n 元语法的指数膨胀与长尾稀疏死局，拆解 RNN 用固定大小隐状态装下任意长历史的记忆账本设计、参数共享与 tanh 的选择，再跟着一个小批量走完训练全程，最后用可手算的标量例子讲透 BPTT 连乘如何同时孕育梯度爆炸与消失。',
+        tags: ['深度学习', 'RNN', '循环神经网络', '语言模型', 'BPTT', '序列建模'],
+        date: '2026-07-08',
+        readingTime: '16 分钟',
+        image: '/images/articles/rnn.png',
+      },
+      {
         slug: 'word2vec',
         title: '当词语第一次变成向量：一文读懂 word2vec',
         summary: '从独热编码表达不了相似度的死胡同出发，拆解 Skip-gram/CBOW 两个对偶模型、"两个矩阵 + 查表 + 点积"的极简结构与借口任务思想，再到负采样/层序 softmax 如何绕开 O(|V|) 分母、下采样与三数组打包的工程细节——词语第一次变成向量，一切现代 embedding 都从这里出发。',
