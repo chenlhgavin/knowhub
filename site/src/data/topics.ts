@@ -31,6 +31,15 @@ export const topics: Topic[] = [
     heroImage: '/images/topics/deep-learning-hero.png',
     articles: [
       {
+        slug: 'word2vec',
+        title: '当词语第一次变成向量：一文读懂 word2vec',
+        summary: '从独热编码表达不了相似度的死胡同出发，拆解 Skip-gram/CBOW 两个对偶模型、"两个矩阵 + 查表 + 点积"的极简结构与借口任务思想，再到负采样/层序 softmax 如何绕开 O(|V|) 分母、下采样与三数组打包的工程细节——词语第一次变成向量，一切现代 embedding 都从这里出发。',
+        tags: ['深度学习', 'word2vec', '词向量', 'NLP', '负采样', 'Skip-gram'],
+        date: '2026-07-08',
+        readingTime: '17 分钟',
+        image: '/images/articles/word2vec.png',
+      },
+      {
         slug: 'bert-family',
         title: '当词向量学会看上下文：一文读懂 BERT',
         summary: '从静态词向量的一词多义与"三明治"困境出发，拆解 BERT 的双向编码器架构、三嵌入输入表示、MLM/NSP 预训练任务与"换头+轻推"微调范式，并梳理 RoBERTa / DistilBERT / ELECTRA 等家族图谱与它在今天的定位。',
