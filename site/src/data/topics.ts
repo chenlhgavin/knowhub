@@ -31,6 +31,15 @@ export const topics: Topic[] = [
     heroImage: '/images/topics/deep-learning-hero.png',
     articles: [
       {
+        slug: 'ngram-language-model',
+        title: 'AI 猜词第一课：数频率为何走不通',
+        summary: '从手机输入法"猜下一个词"讲起，铺开语言模型的起点：序列数据为什么顺序即信息、文字如何经四步流水线变成数字，再用一个 4 句话、10 个词的迷你语料亲手数一遍 n 元语法——看它如何在"加大 n 更准"与"格子指数膨胀又填不满"之间两头堵；而齐普夫定律的长尾更宣判了数频率的死刑：经验被锁死在格子里，无法从"他"迁移到"她"。这正是神经网络登场的理由，也是整个 RNN 系列的起点。',
+        tags: ['深度学习', '语言模型', 'n 元语法', '齐普夫定律', '序列建模', 'NLP'],
+        date: '2026-07-09',
+        readingTime: '8 分钟',
+        image: '/images/articles/ngram-language-model.png',
+      },
+      {
         slug: 'rnn',
         title: '当神经网络学会记忆：一文读懂 RNN',
         summary: '从"猜下一个词"的语言模型出发，用迷你语料走通 n 元语法的指数膨胀与长尾稀疏死局，拆解 RNN 用固定大小隐状态装下任意长历史的记忆账本设计、参数共享与 tanh 的选择，再跟着一个小批量走完训练全程，最后用可手算的标量例子讲透 BPTT 连乘如何同时孕育梯度爆炸与消失。',
