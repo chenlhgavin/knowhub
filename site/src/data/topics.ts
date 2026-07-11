@@ -49,6 +49,15 @@ export const topics: Topic[] = [
         image: '/images/articles/rnn.png',
       },
       {
+        slug: 'rnn-gradient',
+        title: 'RNN 的死穴：梯度爆炸与消失',
+        summary: '同一个权重矩阵沿时间被连乘几十次，这件事有两本账：前向的雪球有 tanh 踩刹车，反向的连乘没人管。先用前馈网络的两本账讲清"链式法则一层乘两个因子"的读法，再用一个极简 RNN 沿三条路径亲手推出 BPTT 的梯度——隔几步就乘几个 w，大于 1 爆炸、小于 1 消失，结构注定；最后算清两个补丁的账：梯度裁剪治爆炸、截断 BPTT 省算力，但消失无解，除非换结构。',
+        tags: ['深度学习', 'RNN', '梯度爆炸', '梯度消失', 'BPTT', '梯度裁剪'],
+        date: '2026-07-11',
+        readingTime: '8 分钟',
+        image: '/images/articles/rnn-gradient.png',
+      },
+      {
         slug: 'word2vec',
         title: '当词语第一次变成向量：一文读懂 word2vec',
         summary: '从独热编码表达不了相似度的死胡同出发，拆解 Skip-gram/CBOW 两个对偶模型、"两个矩阵 + 查表 + 点积"的极简结构与借口任务思想，再到负采样/层序 softmax 如何绕开 O(|V|) 分母、下采样与三数组打包的工程细节——词语第一次变成向量，一切现代 embedding 都从这里出发。',
