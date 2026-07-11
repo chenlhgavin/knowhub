@@ -58,6 +58,15 @@ export const topics: Topic[] = [
         image: '/images/articles/rnn-gradient.png',
       },
       {
+        slug: 'modern-rnn',
+        title: '给记忆装阀门：一文读懂现代 RNN',
+        summary: '承接"梯度消失无解，除非换结构"的判决，拆解门控的共同底层——把连乘的乘数从定死的 W×tanh′ 换成可学到 1 的门，给记忆和梯度修一条加法直通路；再看 GRU 两个门与 LSTM 三个门加一条记忆传送带的分工取舍，以及深度、双向两个正交增强和双向"只能当编码器"的边界。',
+        tags: ['深度学习', 'GRU', 'LSTM', '门控', 'RNN', '双向 RNN'],
+        date: '2026-07-11',
+        readingTime: '8 分钟',
+        image: '/images/articles/modern-rnn.png',
+      },
+      {
         slug: 'word2vec',
         title: '当词语第一次变成向量：一文读懂 word2vec',
         summary: '从独热编码表达不了相似度的死胡同出发，拆解 Skip-gram/CBOW 两个对偶模型、"两个矩阵 + 查表 + 点积"的极简结构与借口任务思想，再到负采样/层序 softmax 如何绕开 O(|V|) 分母、下采样与三数组打包的工程细节——词语第一次变成向量，一切现代 embedding 都从这里出发。',
