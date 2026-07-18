@@ -13,6 +13,11 @@ const multimodalAgent = defineCollection({
   schema: z.object({}).passthrough().optional(),
 });
 
+const agent = defineCollection({
+  type: 'content',
+  schema: z.object({}).passthrough().optional(),
+});
+
 const python = defineCollection({
   type: 'content',
   schema: z.object({}).passthrough().optional(),
@@ -36,6 +41,7 @@ const presentations = defineCollection({
 export const collections = {
   rust,
   'multimodal-agent': multimodalAgent,
+  agent,
   python,
   architecture,
   'deep-learning': deepLearning,
